@@ -10,7 +10,7 @@ genai.configure(api_key=os.getenv('API_KEY'))
 model = genai.GenerativeModel('gemini-pro')
 img_model = genai.GenerativeModel('gemini-pro-vision')
 def getResponce(title):
-    prompt = f"You`re a content writer, Your job is to write Youtube Description from given video summary which is delimited by three backticks write brief description also include subscribe request ```{title}``` "
+    prompt = f"You`re a content writer, Your job is to write Youtube Description from given video summary which is delimited by three backticks write brief description also request users to like and subscribe the video ```{title}``` "
     res = model.generate_content(prompt,stream=True)
     return res
 
